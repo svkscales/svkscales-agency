@@ -45,13 +45,13 @@ export default function Footer() {
         </div>
 
         {/* Right Side: Avatar Circles + Animated Tooltip Icons */}
-        <div className="flex-1 flex justify-center md:justify-end items-center gap-8">
+        <div className="flex-1 flex flex-col md:flex-row justify-center md:justify-end items-center gap-5 md:gap-8 mt-12 md:mt-0">
           
           <div className="hidden md:block">
             <AvatarCircles numPeople={84} avatarUrls={avatars} />
           </div>
 
-          <div className="flex items-center gap-6 text-sm font-bold tracking-widest uppercase">
+          <div className="flex items-center gap-6 text-sm font-bold tracking-widest uppercase z-20">
             <a 
               href="https://www.instagram.com/svkscales?igsh=MTkzZjkzOHNkNHExbg%3D%3D&utm_source=qr" 
               target="_blank" 
@@ -60,6 +60,11 @@ export default function Footer() {
             >
               Instagram
             </a>
+          </div>
+
+          {/* Mobile Avatar Circles placed below Instagram */}
+          <div className="block md:hidden mt-2 z-20 scale-110">
+            <AvatarCircles numPeople={84} avatarUrls={avatars} />
           </div>
 
         </div>
