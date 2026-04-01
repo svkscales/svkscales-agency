@@ -8,7 +8,6 @@ const tiers = [
   {
     id: "01",
     title: "The Foundation",
-    price: "£699",
     description: "A stunning cinematic online presence that makes your business impossible to ignore. Built for local businesses that need to look elite without the complexity. Includes a cinematic hero animation, core information, dynamic contact forms, and a clean interface. No booking systems—just pure, striking presence.",
     color: "text-blue-400",
     bgGlow: "bg-blue-500/5",
@@ -19,7 +18,6 @@ const tiers = [
   {
     id: "02",
     title: "The Experience",
-    price: "£999",
     description: "Everything in Tier 1, elevated with functionality. Your site becomes a working tool—a system that takes bookings, showcases your space, and actively drives repeat visits. Integrates seamless booking functionality, gallery showcases, and services framing. Best for salons, barbershops, and elite service businesses.",
     color: "text-purple-400",
     bgGlow: "bg-purple-500/5",
@@ -30,7 +28,6 @@ const tiers = [
   {
     id: "03",
     title: "The Platform",
-    price: "£1,799",
     description: "The full package. A complete digital ecosystem built around your business. Everything in Tier 2 plus user account creation, individual service booking per team member, loyalty systems, and expanded complex architecture. Best for gyms, aesthetics clinics, and brands serious about scaling.",
     color: "text-cyan-400",
     bgGlow: "bg-cyan-500/5",
@@ -63,8 +60,6 @@ const StickyTier = ({ tier, isEven }: { tier: typeof tiers[0], isEven: boolean }
           >
             <div className={`text-sm font-black tracking-[0.3em] uppercase mb-4 ${tier.color} flex items-center gap-4`}>
               <span>Tier {tier.id}</span>
-              <span className="w-1 h-1 rounded-full bg-current" />
-              <span>{tier.price}</span>
             </div>
             
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-jakarta)] font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-2xl">
@@ -95,10 +90,13 @@ const StickyTier = ({ tier, isEven }: { tier: typeof tiers[0], isEven: boolean }
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-200px" }}
               transition={{ duration: 0.8, delay: 1.5 }}
-              className="flex items-center"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-2"
             >
               <a href={tier.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-white hover:text-blue-400 transition-colors drop-shadow-md">
                 View Architecture <ArrowRight className="w-4 h-4" />
+              </a>
+              <a href="https://calendly.com/svkscales/free-website-consultation" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase ${tier.color} hover:text-white transition-colors drop-shadow-md`}>
+                Get A Quote <ArrowRight className="w-4 h-4" />
               </a>
             </motion.div>
           </motion.div>
